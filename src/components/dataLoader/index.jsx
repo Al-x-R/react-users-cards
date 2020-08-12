@@ -13,15 +13,21 @@ class DataLoader extends Component {
     }
 
     componentDidMount() {
-        fetch('https://randomuser.me/api/')
+        fetch('https://randomuser.me/api/?page=3&results=5&seed=abc')
             .then(res => res.json())
             .then(data => {
-            // const {results} = data
-            this.setState({
-                users: data.results,
-                isFetching: false,
+                // const {results} = data
+                this.setState({
+                    users: data.results,
+                    isFetching: false,
+                })
             })
-        })
+            .catch(error => {
+                this.setState({
+                    error,
+                    isFetching: false,
+                })
+            })
     }
 
     render() {
@@ -33,9 +39,11 @@ class DataLoader extends Component {
         if (isFetching) {
             return <div>Loading...</div>
         }
-        return <ul>
-            {users.map(user => (<li>{JSON.stringify(user, null, '\t')}</li>))}
-        </ul>
+        return (
+            <ul>
+                {users.map(user => (<li key={user.id.value}>{JSON.stringify(user, null, '\t')}</li>))}
+            </ul>
+        )
     }
 }
 
