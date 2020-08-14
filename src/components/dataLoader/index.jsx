@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import {getUsers} from "../../api"
+import UserCard from './../UserCard'
 
 class DataLoader extends Component {
     constructor(props) {
@@ -20,12 +21,12 @@ class DataLoader extends Component {
                     isFetching: false,
                 })
             })
-            // .catch(error => {
-            //     this.setState({
-            //         error,
-            //         isFetching: false,
-            //     })
-            // })
+            .catch(error => {
+                this.setState({
+                    error,
+                    isFetching: false,
+                })
+            })
     }
 
     render() {
@@ -40,7 +41,7 @@ class DataLoader extends Component {
         return (
             <ul>
                 {users.map(user => (
-                    <li key={user.email}>{JSON.stringify(user, null, '\t')}</li>
+                    <UserCard key={user.email} user={user}/>
                 ))}
             </ul>
         )

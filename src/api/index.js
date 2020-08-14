@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import queryStr from 'query-string';
+import queryStr from 'query-string'
 import config from './../config'
 
 const {api: {baseUrl, seed, user}} = config
