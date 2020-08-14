@@ -1,11 +1,11 @@
 import _ from 'lodash'
-import queryString from 'query-string'
+import queryStr from 'query-string';
 import config from './../config'
 
-const {api, baseUrl, seed} = config
+const {api: {baseUrl, seed, user}} = config
 
 export const getUsers = (options) => {
-    const {user} = api
+
     const defaultOptions = {
         page: 1,
         seed: seed,
@@ -16,13 +16,7 @@ export const getUsers = (options) => {
         ...defaultOptions,
         ...options
     }
-    const queryParamsObject = _.pick(resultingOptions, user.queryParams)
-    const fetchParamsString = queryString
-        .stringify(queryParamsObject,
-            {arrayFormat: 'comma'}
-        )
-
-    fetch(`${baseUrl}?p${fetchParamsString}`)
-        .then(res => res.json())
+    const queryParamsObj = _.pick(resultingOptions, user.queryParams)
+    const fetchParamsStr = queryStr.stringify(queryParamsObj, {arrayFormat: 'comma'})
+    return fetch(`${baseUrl}?${fetchParamsStr}`).then(res => res.json())
 }
-

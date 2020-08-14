@@ -20,12 +20,12 @@ class DataLoader extends Component {
                     isFetching: false,
                 })
             })
-            .catch(error => {
-                this.setState({
-                    error,
-                    isFetching: false,
-                })
-            })
+            // .catch(error => {
+            //     this.setState({
+            //         error,
+            //         isFetching: false,
+            //     })
+            // })
     }
 
     render() {
@@ -39,7 +39,9 @@ class DataLoader extends Component {
         }
         return (
             <ul>
-                {users.map(user => (<li key={user.email}>{JSON.stringify(user, null, '\t')}</li>))}
+                {users.map(user => (
+                    <li key={user.email}>{JSON.stringify(user, null, '\t')}</li>
+                ))}
             </ul>
         )
     }
