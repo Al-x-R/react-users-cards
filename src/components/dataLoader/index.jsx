@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import {getUsers} from "../../api"
 import UserCard from './../UserCard'
+import Spinner from './../Spinner'
 
 class DataLoader extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class DataLoader extends Component {
             return <div>Error</div>
         }
         if (isFetching) {
-            return <div>Loading...</div>
+            return <Spinner />
         }
         return (
             <ul>
