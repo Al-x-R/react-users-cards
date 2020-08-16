@@ -9,7 +9,7 @@ export const getUsers = (options) => {
     const defaultOptions = {
         page: 1,
         seed: seed,
-        results: 10,
+        results: 4,
         inc: user.fields,
     }
     const resultingOptions = {
