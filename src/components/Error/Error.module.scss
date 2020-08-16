@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
 
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100%;
-}
-
-body {
-  display: flex;
-}
-
 h1 {
   font-family: 'Cabin Sketch', cursive;
   font-size: 3em;
@@ -49,7 +37,6 @@ h1 small {
   margin: 0;
   overflow: visible;
   order: 2;
-
 }
 
 .beeSketch {
@@ -72,7 +59,6 @@ h1 small {
   animation: blue 3s linear infinite, opacityBlue 5s linear alternate infinite;
 }
 
-
 @media only screen and (min-width: 780px) {
   .site {
     flex-direction: row;
@@ -84,14 +70,12 @@ h1 small {
     order: 2;
     padding-bottom: 2em;
     padding-left: 2em;
-
   }
 
   .sketch {
     order: 1;
   }
 }
-
 
 @keyframes blue {
   0% {

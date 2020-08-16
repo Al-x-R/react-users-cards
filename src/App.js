@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import DataLoader from "./components/dataLoader";
+import UsersCardsLoader from "./components/UsersCardsLoader";
 
 function App() {
   return (
     <div className="App">
-      <DataLoader />
+      <UsersCardsLoader />
     </div>
   );
 }
