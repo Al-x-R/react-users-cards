@@ -3,6 +3,7 @@ import {getUsers} from "../../api"
 import UserCard from './../UserCard'
 import styles from './UsersCardsLoader.module.scss'
 import Spinner from './../Spinner'
+import Error from './../Error'
 
 class DataLoader extends Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class DataLoader extends Component {
         const {isFetching, users, error} = this.state
 
         if (error) {
-            return <div>Error</div>
+            return <Error />
         }
         if (isFetching) {
             return <Spinner/>
