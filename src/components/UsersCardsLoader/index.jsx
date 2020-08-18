@@ -10,7 +10,6 @@ import Pagination from './../Pagination'
 class DataLoader extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             isFetching: true,
             users: [],
@@ -77,18 +76,18 @@ class DataLoader extends Component {
                 currentPage: 1,
             })
         }
-
     }
 
     render() {
         const {isFetching, users, error, currentPage} = this.state
 
         if (error) {
-            return <Error />
+            return <Error/>
         }
         if (isFetching) {
             return <Spinner/>
         }
+
         return (
             <div className={styles.main}>
                 <article className={styles.usersCards}>

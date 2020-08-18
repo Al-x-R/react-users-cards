@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import UsersCardsLoader from "./components/UsersCardsLoader";
 
 function App() {

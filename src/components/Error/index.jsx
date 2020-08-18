@@ -8,7 +8,6 @@ function Error() {
                 <div className={`${styles.beeSketch} ${styles.red}`}/>
                 <div className={`${styles.beeSketch} ${styles.blue}`}/>
             </div>
-
             <h1>404:
                 <small>Users Not Found</small></h1>
         </div>

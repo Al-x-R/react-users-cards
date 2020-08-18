@@ -5,14 +5,14 @@ import NextBtn from "./NextBtn"
 
 function Pagination(props) {
     const {onPageClick, currentPage, onPrevClick, onNextClick} = props
-    
+
     const displayedNumbers = 5
 
     let currentIndex
 
     if (currentPage - 1 >= 2) {
         currentIndex = currentPage - 1 && currentPage - 2
-    } else if(currentPage === 2) {
+    } else if (currentPage === 2) {
         currentIndex = currentPage - 1
     } else {
         currentIndex = currentPage
@@ -36,7 +36,6 @@ function Pagination(props) {
                     </div>
                 })}
             </div>
-
             <NextBtn className={styles.button} onClick={onNextClick}/>
         </div>
     )

@@ -1,139 +1,89 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
-
-.card{
+.card {
   margin: 10px;
   width: 220px;
   height: 270px;
   background: #fff;
   border: 2px solid #fff;
-  box-shadow: 0 4px 7px rgba(0,0,0,.5);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, .5);
   cursor: pointer;
-  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
   overflow: hidden;
   position: relative;
 }
-.card img{
+
+.card img {
   width: 100%;
-  height:100%;
-  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
 }
-.descriptions{
+
+.descriptions {
   position: absolute;
-  top:0;
-  left:0;
-  background-color: rgba(255,255,255,.7);
-  width:100%;
-  height:100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .7);
+  width: 100%;
+  height: 100%;
   transition: all .7s ease-in-out;
   padding: 20px;
   box-sizing: border-box;
   clip-path: circle(0% at 100% 100%);
+  text-align: center;
 }
-.card:hover .descriptions{
-  left:0;
+
+.info {
+  padding-top: 20px;
+}
+
+.card:hover .descriptions {
+  left: 0;
   transition: all .7s ease-in-out;
   clip-path: circle(75%);
 }
-.card:hover{
-  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
-  box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+
+.card:hover {
+  transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, .3);
   transform: scale(.97);
 }
-.card:hover img{
-  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+
+.card:hover img {
+  transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
   transform: scale(1.6) rotate(20deg);
   filter: blur(3px);
 }
-.card h1{
-  color: #ff3838;
+
+.title {
+  color: #656565;
+  font-size: 20px;
+  font-weight: bold;
   letter-spacing: 1px;
-  margin: 0px;
 }
-.card p{
+
+.mT {
+  margin-top: 8px;
+}
+
+.oneLineText {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line_clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card p {
   line-height: 24px;
   height: 70%;
 }
 
-//.wrapper{
-//  width: 300px;
-//  display: flex;
-//  flex-direction: column;
-//  box-shadow: 0 5px 20px rgba(0,0,0,.3);
-//  margin: 30px 20px;
-//  overflow: hidden;
-//}
-//
-//.top{
-//  width: 100%;
-//  background: linear-gradient(to right,#01a9ac,#01dbdf);
-//  padding: 30px 25px;
-//  border-top-left-radius: 5px;
-//  border-bottom-left-radius: 5px;
-//  text-align: center;
-//  color: #fff;
-//}
-//
-//.top img{
-//  border-radius: 5px;
-//  margin-bottom: 10px;
-//}
-//
-//.top h4 {
-//  margin: 10px 0 0;
-//  padding: 10px;
-//}
-//
-//.top p {
-//  font-size: 20px;
-//  font-weight: bold;
-//  margin: 0;
-//}
-//
-//.bottom {
-//  width: 100%;
-//  background: #fff;
-//  padding: 30px 25px;
-//  border-top-right-radius: 5px;
-//  border-bottom-right-radius: 5px;
-//  visibility: hidden;
-//  opacity: 0;
-//  z-index: -10;
-//}
-//
-//.wrapper:hover .bottom {
-//  visibility: visible;
-//  z-index: 20;
-//  opacity: 1;
-//}
-//
-//.info {
-//  margin-bottom: 25px;
-//  width: 90%;
-//}
-//
-//.info h3 {
-//  margin-bottom: 15px;
-//  padding-bottom: 5px;
-//  border-bottom: 1px solid #e0e0e0;
-//  color: #353c4e;
-//  text-transform: uppercase;
-//  letter-spacing: 5px;
-//}
-//
-//.infoData {
-//  display: flex;
-//  flex-direction: column;
-//  align-items: flex-start;
-//  overflow: hidden;
-//}
-//
-//.infoDataTitle {
-//  color: #353c4e;
-//  margin: 5px 0;
-//}
-//
-//.infoData p {
-//  font-size: 20px;
-//  margin: 10px 0;
-//  color: #919aa3;
-//}
+.userInfo {
+  font-size: 20px;
+  font-weight: bold;
+}
