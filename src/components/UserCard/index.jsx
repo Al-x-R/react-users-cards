@@ -8,30 +8,17 @@ function UserCard(props) {
 
     return (
 
-        <section className={styles.wrapper}>
-            <div className={styles.left}>
-                <img src={large}
-                     alt={name}/>
-                <h4>{title}</h4>
-                <p>{last}</p>
-            </div>
-            <div className={styles.right}>
-                <div className={styles.info}>
-                    <h3>Information</h3>
-                    <div className={styles.infoData}>
-                        <span className={styles.infoDataTitle}>Full name</span>
-                        <p>{first} {last}</p>
-                            <span>Gender</span>
-                            <p>{gender}</p>
-                            <span>Email</span>
-                            <p>{email}</p>
+            <div className={styles.card}>
+                <img src={large} alt={name} />
+                    <div className={styles.descriptions}>
+                        <h1>{title}</h1>
+                        <h2>{first} {last}</h2>
+                        <h3>Gender: {gender}</h3>
+                        <h3>{email}</h3>
+
                     </div>
-                </div>
             </div>
-        </section>
+        )
+        }
 
-
-    )
-}
-
-export default UserCard
+        export default UserCard

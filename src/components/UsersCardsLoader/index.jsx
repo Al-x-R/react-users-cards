@@ -4,6 +4,8 @@ import UserCard from './../UserCard'
 import styles from './UsersCardsLoader.module.scss'
 import Spinner from './../Spinner'
 import Error from './../Error'
+import Pagination from './../Pagination'
+
 
 class DataLoader extends Component {
     constructor(props) {
@@ -18,14 +20,17 @@ class DataLoader extends Component {
     }
 
     loadUsers = () => {
-        const {currentPage, users} = this.state
+        const {currentPage} = this.state
+        this.setState({
+            isFetching: true,
+        })
         getUsers({
             page: currentPage,
         })
             .then(data => {
                 this.setState({
                     page: currentPage,
-                    users: users.concat(data.results),
+                    users: data.results,
                     isFetching: false,
                 })
             })
@@ -48,6 +53,12 @@ class DataLoader extends Component {
         }
     }
 
+    onChangePage = (page) => {
+        this.setState({
+            currentPage: page
+        })
+    }
+
     next = () => {
         const {currentPage} = this.state
         this.setState({
@@ -55,8 +66,22 @@ class DataLoader extends Component {
         })
     }
 
+    prev = () => {
+        const {currentPage} = this.state
+        if (currentPage > 2) {
+            this.setState({
+                currentPage: currentPage - 1,
+            })
+        } else {
+            this.setState({
+                currentPage: 1,
+            })
+        }
+
+    }
+
     render() {
-        const {isFetching, users, error} = this.state
+        const {isFetching, users, error, currentPage} = this.state
 
         if (error) {
             return <Error />
@@ -65,13 +90,15 @@ class DataLoader extends Component {
             return <Spinner/>
         }
         return (
-            <div>
+            <div className={styles.main}>
                 <article className={styles.usersCards}>
                     {users.map(user => (
                         <UserCard key={user.email} user={user}/>
                     ))}
                 </article>
-                <button onClick={this.next}>Download more</button>
+                <Pagination onPrevClick={this.prev}
+                            onPageClick={this.onChangePage}
+                            onNextClick={this.next} currentPage={currentPage}/>
             </div>
         )
     }
