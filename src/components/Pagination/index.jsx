@@ -2,6 +2,7 @@ import React from "react"
 import styles from './Pagination.module.scss'
 import PrevBtn from './PrevBtn'
 import NextBtn from "./NextBtn"
+import PropTypes from "prop-types";
 
 function Pagination(props) {
     const {onPageClick, currentPage, onPrevClick, onNextClick} = props
@@ -39,6 +40,13 @@ function Pagination(props) {
             <NextBtn className={styles.button} onClick={onNextClick}/>
         </div>
     )
+}
+
+Pagination.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    onPageClick: PropTypes.func.isRequired,
+    onPrevClick: PropTypes.func.isRequired,
+    onNextClick: PropTypes.func.isRequired,
 }
 
 export default Pagination
