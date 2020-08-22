@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styles from './UserCard.module.scss'
 
 function UserCard(props) {
@@ -33,6 +34,10 @@ function UserCard(props) {
             </div>
         </div>
     )
+}
+
+UserCard.propTypes = {
+    user: PropTypes.object.isRequired,
 }
 
 export default UserCard
